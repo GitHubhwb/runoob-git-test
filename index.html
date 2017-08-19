@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="images/star.svg">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<!--header  start-->
+<header id='header'>
+    <a href="#" class='header_logo'>
+        <img src="images/header_logo.png" alt="">
+    </a>
+    <a href="#" class='header_app'>
+        <img src="images/header_app.png" alt="">
+    </a>
+</header>
+<!--header  end-->
+
+<!--search  start-->
+<section id='search'>
+    <form action="搜索提交地址">
+        <input type="text" class='search_Box' placeholder='     慢慢搜'>
+        <input type="button" class="search_btn" value='搜索'>
+    </form>
+</section>
+<!--search  start-->
+
+<!--menu  start-->
+<section id="menu">
+    <div class="row"></div>
+</section>
+<!--menu  end-->
+
+<!--dissale start-->
+<section id="dissale">
+    <div class="disTitle">
+        <h4>
+            <span>超值折扣推荐</span>
+            <img src="http://www.zuyushop.com/wap/images/more.png" alt=""/>
+        </h4>
+    </div>
+    <div class="disList"></div>
+    <div class="disMore">
+        <a href="#">更多优惠信息 >></a>
+    </div>
+</section>
+<!--dissale end-->
+
+<!--品牌排行  start-->
+<div class="disTitle">
+    <h4>
+        <span>品牌排行</span>
+        <img src="http://www.zuyushop.com/wap/images/more.png" alt=""/>
+    </h4>
+</div>
+<!--品牌排行  end-->
+
+<!--footer  start-->
+<footer id='footer'>
+   <div>
+       <div class="width30">登陆</div>
+       <div class="width30">注册</div>
+       <div class="width40">
+           <a href="#">
+               <img src="http://www.zuyushop.com/wap/images/top.jpg" alt="">
+           </a>返回顶部
+       </div>
+       <p>
+           <span>
+               <a href="http://m.manmanbuy.com/app.html?type=footword&value=wap">手机APP下载
+               </a>
+           </span>
+           <span>
+               <a id='phone' href="http://m.manmanbuy.com">&nbsp;慢慢买手机版
+               </a>
+           </span>
+           <span> -- 掌上比价平台</span>
+       </p>
+       <p class='wz'>m.manmanbuy.com</p>
+   </div>
+
+</footer>
+<!--footer end-->
+
+<!--indexMenuTpl start-->
+<script type="text/html" id="indexMenuTpl">
+    {{each result as value index}}
+    <div class="item col-xs-3">
+        <a href="{{value.titlehref}}">
+            {{#value.img}}
+            <p>{{value.name}}</p>
+        </a>
+    </div>
+    {{/each}}
+</script>
+<!--indexMenuTpl end-->
+
+
+<!--indexDissale start-->
+<script type='text/html' id='indexDissale'>
+{{each result as value index}}
+<div class="media">
+    <div class="pull-left">
+        <a href="#">
+           {{#value.productImgSm}}
+        </a>
+    </div>
+    <div class="media-body">
+        <h4 class='media-heading'>{{value.productName}}<span>{{value.productPinkage}}包邮（44.9-15）</span></h4>
+        <p>
+            <span>{{value.productFrom}} | {{value.productTime}}</span>
+                    <span class='comment'>
+                        <i class="glyphicon glyphicon-subtitles">{{value.productComCount}}</i>
+                    </span>
+        </p>
+    </div>
+</div>
+{{/each}}
+</script>
+<!--indexDissale end-->
+
+
+
+<script src="./lib/jquery/jquery.js"></script>
+<script src='js/url.js'></script>
+<script src="./lib/zepto.js/dist/zepto.js"></script>
+<script src="./lib/zepto.js/src/event.js"></script>
+<script src="./lib/zepto.js/src/selector.js"></script>
+<script src="./lib/zepto.js/src/ajax.js"></script>
+<script src="./js/template.js"></script>
+<script src="./js/index.js"></script>
+</body>
+</html>

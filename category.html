@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/category.css">
+</head>
+<body>
+<!--header  start-->
+<header id='header'>
+    <a href="#" class='header_logo'>
+        <img src="images/header_logo.png" alt="">
+    </a>
+    <a href="#" class='header_app'>
+        <img src="images/header_app.png" alt="">
+    </a>
+</header>
+<!--header  end-->
+
+<!--search  start-->
+<section id='search'>
+    <form action="搜索提交地址">
+        <input type="text" class='search_Box' placeholder='     慢慢搜'>
+        <input type="button" class="search_btn" value='搜索'>
+    </form>
+</section>
+<!--search  start-->
+
+<!--category   start-->
+<section id='category'>
+    <ul id='categoryuu'>
+        <li class='categoryTitle Title0' titleId='0'><span>手机数码</span></li>
+        <div class="categoryList List0 row">
+            <div class="categoryContent col-xs-4"><a href="#">电风扇</a></div>
+            <div class="categoryContent col-xs-4"><a href="#">电风扇</a></div>
+            <div class="categoryContent col-xs-4"><a href="#">电风扇</a></div>
+            <div class="categoryContent col-xs-4"><a href="#">电风扇</a></div>
+            <div class="categoryContent col-xs-4"><a href="#">电风扇</a></div>
+            <div class="categoryContent col-xs-4"><a href="#">电风扇</a></div>
+        </div>
+        <li class='categoryTitle Title1'><span>手机数码</span></li>
+        <div class="categoryList List1 row"></div>
+        <li class='categoryTitle Title2'><span>手机数码</span></li>
+        <div class="categoryList List2 row"></div>
+        <li class='categoryTitle Title3'><span>手机数码</span></li>
+        <div class="categoryList List3 row"></div>
+        <li class='categoryTitle Title4'><span>手机数码</span></li>
+        <div class="categoryList List4 row"></div>
+    </ul>
+</section>
+<!--category   end-->
+
+
+<!--footer  start-->
+<footer id='footer'>
+    <div>
+        <div class="width30">登陆</div>
+        <div class="width30">注册</div>
+        <div class="width40">
+            <a href="#">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" alt="">
+            </a>返回顶部
+        </div>
+        <p>
+           <span>
+               <a href="http://m.manmanbuy.com/app.html?type=footword&value=wap">手机APP下载
+               </a>
+           </span>
+           <span>
+               <a id='phone' href="http://m.manmanbuy.com">&nbsp;慢慢买手机版
+               </a>
+           </span>
+            <span> -- 掌上比价平台</span>
+        </p>
+        <p class='wz'>m.manmanbuy.com</p>
+    </div>
+</footer>
+<!--footer end-->
+
+<!--渲染菜单标题-->
+<script type='text/html' id='categoryTitle'>
+{{each result as value index}}
+<li class='categoryTitle Title{{value.titleId}}' titleId='{{value.titleId}}'><span>{{value.title}}</span></li>
+<div class="categoryList List{{value.titleId}} row"></div>
+{{/each}}
+</script>
+
+<!--菜单中的列表渲染-->
+<script type='text/html' id='categoryListTp'>
+{{each result as value index}}
+    <div class="categoryContent col-xs-4" categoryId='{{value.categoryId}}'><a href="product.html?category={{value.category}}&categoryid={{value.categoryId}}">{{value.category}}</a></div>
+{{/each}}
+</script>
+
+
+
+<script src="./lib/jquery/jquery.js"></script>
+<script src='js/url.js'></script>
+<script src="./lib/zepto.js/dist/zepto.js"></script>
+<script src="./lib/zepto.js/src/event.js"></script>
+<script src="./lib/zepto.js/src/selector.js"></script>
+<script src="./lib/zepto.js/src/ajax.js"></script>
+<script src="./js/template.js"></script>
+<script src="./js/category.js"></script>
+</body>
+</html>

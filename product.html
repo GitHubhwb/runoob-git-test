@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/product.css">
+</head>
+<body>
+<!--header  start-->
+<header id='header'>
+    <a href="#" class='header_logo'>
+        <img src="images/header_logo.png" alt="">
+    </a>
+    <a href="#" class='header_app'>
+        <img src="images/header_app.png" alt="">
+    </a>
+</header>
+<!--header  end-->
+
+<!--search  start-->
+<section id='search'>
+    <form action="搜索提交地址">
+        <input type="text" class='search_Box' placeholder='     慢慢搜'>
+        <input type="button" class="search_btn" value='搜索'>
+    </form>
+</section>
+<!--search  start-->
+
+<div id="product">
+    <div id="nav">
+        <a href="./index.html">首页 > </a>
+        <a href="./category.html">全部分类 > </a>
+        <span id="productTitle"></span>
+        <button>筛选</button>
+    </div>
+    <div id="productContent">
+        <div class="media">
+            <a class="pull-left media-left" href="#">
+                <img class="media-object"
+                     src="http://www.zuyushop.com:8013/ProPic/201612/small80/Thumb_2016120016544872739.jpg">
+            </a>
+        </div>
+        <div class="media-body clearfix">
+                <h4 class="media-heading">夏普(SHARP) LCD-70SU665A 70英寸 4K超高清智能液晶电视 </h4>
+                <p class="price"><span><i>¥</i>6499</span></p>
+                <p class="info">
+                    <span>商城报价</span>
+                    <span>有3749人评论</span>
+                </p>
+
+        </div>
+        <div class="media">
+            <a class="pull-left media-left" href="#">
+                <img class="media-object"
+                     src="http://www.zuyushop.com:8013/ProPic/201612/small80/Thumb_2016120016544872739.jpg">
+            </a>
+        </div>
+        <div class="media-body clearfix">
+            <h4 class="media-heading">夏普(SHARP) LCD-70SU665A 70英寸 4K超高清智能液晶电视 </h4>
+            <p class="price"><span><i>¥</i>6499</span></p>
+            <p class="info">
+                <span>商城报价</span>
+                <span>有3749人评论</span>
+            </p>
+
+        </div>
+        <div class="media">
+            <a class="pull-left media-left" href="#">
+                <img class="media-object"
+                     src="http://www.zuyushop.com:8013/ProPic/201612/small80/Thumb_2016120016544872739.jpg">
+            </a>
+        </div>
+        <div class="media-body clearfix">
+            <h4 class="media-heading">夏普(SHARP) LCD-70SU665A 70英寸 4K超高清智能液晶电视 </h4>
+            <p class="price"><span><i>¥</i>6499</span></p>
+            <p class="info">
+                <span>商城报价</span>
+                <span>有3749人评论</span>
+            </p>
+
+        </div>
+        <div class="media">
+            <a class="pull-left media-left" href="#">
+                <img class="media-object"
+                     src="http://www.zuyushop.com:8013/ProPic/201612/small80/Thumb_2016120016544872739.jpg">
+            </a>
+        </div>
+        <div class="media-body clearfix">
+            <h4 class="media-heading">夏普(SHARP) LCD-70SU665A 70英寸 4K超高清智能液晶电视 </h4>
+            <p class="price"><span><i>¥</i>6499</span></p>
+            <p class="info">
+                <span>商城报价</span>
+                <span>有3749人评论</span>
+            </p>
+
+        </div>
+    </div>
+    <div id="productPage">
+        <div class="pageList"><button class='prev'>上一页</button></div>
+        <div class='pageList'>
+            <select name="pageSelect" id="pageSelect">
+              <option value="1">1</option>
+           </select>
+        </div>
+        <div class="pageList"><button class="next">下一页</button></div>
+    </div>
+
+</div>
+<!--footer  start-->
+<footer id='footer'>
+    <div>
+        <div class="width30">登陆</div>
+        <div class="width30">注册</div>
+        <div class="width40">
+            <a href="#">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" alt="">
+            </a>返回顶部
+        </div>
+        <p>
+           <span>
+               <a href="http://m.manmanbuy.com/app.html?type=footword&value=wap">手机APP下载
+               </a>
+           </span>
+           <span>
+               <a id='phone' href="http://m.manmanbuy.com">&nbsp;慢慢买手机版
+               </a>
+           </span>
+            <span> -- 掌上比价平台</span>
+        </p>
+        <p class='wz'>m.manmanbuy.com</p>
+    </div>
+</footer>
+<!--footer end-->
+
+<!--模板引擎渲染页面-->
+<script type='text/html' id='productTp'>
+{{each data as value index}}
+    <div class="media">
+        <a class="pull-left media-left" href="#">
+            {{#value.productImg}}
+        </a>
+    </div>
+    <div class="media-body clearfix">
+        <h4 class="media-heading">{{value.productName}}</h4>
+        <p class="price"><span>{{value.productPrice}}</span></p>
+        <p class="info">
+            <span>商城{{value.productQuote}}</span>
+            <span>有{{value.productCom}}</span>
+        </p>
+    </div>
+{{/each}}
+
+</script>
+<script src='./js/url.js'></script>
+<script src='./lib/jquery/jquery.min.js'></script>
+<script src='./js/template.js'></script>
+<script src='./js/product.js'></script>
+</body>
+</html>
